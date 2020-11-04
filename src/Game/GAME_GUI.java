@@ -46,6 +46,17 @@ public class GAME_GUI {
     public static Game_Info database_item = new Game_Info();
 
 
+    //this constructor will call the GUI
+    public GAME_GUI(){
+        javax.swing.SwingUtilities.invokeLater(new Runnable() {
+            public void run() {
+                createAndShowGUI();
+            }
+        });
+
+    }
+
+    //Components to add to frame
     public static void addComponentsToPane(Container pane) {
         pane.setLayout(null); // frame
 

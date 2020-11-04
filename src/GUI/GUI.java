@@ -1,5 +1,7 @@
 package GUI;
 
+import Game.GAME_GUI;
+
 import javax.swing.*;
 
 import java.awt.*;
@@ -9,6 +11,8 @@ import java.awt.Dimension;
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import java.awt.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 import java.awt.image.*;
 import java.io.*;
 import javax.swing.*;
@@ -32,6 +36,17 @@ public class GUI {
 
         panel.setLayout(new GridLayout(2, 2));
         panel.add(b1);
+        b1.addActionListener(new ActionListener()
+        {
+            public void actionPerformed(ActionEvent e) {
+
+                       GAME_GUI G = new GAME_GUI();
+
+            }
+        });
+
+
+
         panel.add(b2);
         panel.add(b3);
         panel.add(b4);
