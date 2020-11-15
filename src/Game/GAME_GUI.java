@@ -185,7 +185,7 @@ public class GAME_GUI {
     private static void createAndShowGUI() {
         //Create and set up the window.
         JFrame frame = new JFrame("Recycling game");
-        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        //frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         //Set up the content pane.
         addComponentsToPane(frame.getContentPane());
         //Size and display the window.
