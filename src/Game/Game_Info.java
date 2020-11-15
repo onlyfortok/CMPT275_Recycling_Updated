@@ -4,6 +4,7 @@ public class Game_Info implements Game_parameters{
     protected int max_number_items=5;
     protected int counter=0; // counter will record item number
     protected int score=0; // score will record current score
+    protected String difficultyLevel= "";
 
     protected String[] items = {"Vase", "Cans", "Sandwich", "Punch Bowl","Bong"};
     protected String[] answers = {"Glass", "Metal", "Organic", "Glass","Glass"};
@@ -12,7 +13,6 @@ public class Game_Info implements Game_parameters{
 
     public Game_Info(){
     }
-
 
     //getters
     public String get_word(int i){ //i has to be between 0 and 5
@@ -33,7 +33,8 @@ public class Game_Info implements Game_parameters{
     public String get_answer(int i){ //i has to be between 0 and 5
         return this.answers[i];
     }
-
+    public String get_difficultyLevel(){ return this.difficultyLevel; }
+    public String[] get_containers(){return this.container;}
 
 
     //setters
@@ -43,6 +44,8 @@ public class Game_Info implements Game_parameters{
     public void set_score(int i){ //i has to be between 0 and 5
         this.counter = i;
     }
+    public void set_difficultyLevel(String difficulty_level){ this.difficultyLevel = difficulty_level;}
+    public void set_containers(String[] container_array){this.container = container_array;} //not too sure if you can set an array equal to another array in java
 
 
     // useful features

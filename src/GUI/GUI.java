@@ -1,24 +1,13 @@
 package GUI;
 
 import Game.GAME_GUI;
-
 import javax.swing.*;
-
 import java.awt.*;
 import java.awt.Container;
-import java.awt.Insets;
-import java.awt.Dimension;
 import javax.swing.JButton;
 import javax.swing.JFrame;
-import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import java.awt.image.*;
-import java.io.*;
-import javax.swing.*;
-import javax.imageio.ImageIO;
-
-
 
 public class GUI {
     private  static JPanel panel=new JPanel(); //This panel will hold the buttons
@@ -30,7 +19,6 @@ public class GUI {
 
     public static void addComponentsToPane(Container pane) {
         pane.setLayout(null); // frame
-
         panel_image.add(new JLabel(new ImageIcon("C:\\Users\\16047\\IdeaProjects\\CMPT275_Project_FINAL_COPY\\DataBase\\GUI\\GUI_IMAGE.png")));
         panel_image.setBounds(150,0,300,300);
 

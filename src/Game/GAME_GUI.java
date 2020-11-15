@@ -41,7 +41,9 @@ public class GAME_GUI {
 
     //buttons
     public static JButton confirm = new JButton("confirm");
-    private static JButton next = new JButton("next");
+    private static JButton next = new JButton("next"); // not implemented
+    private static JButton skip = new JButton("skip"); // not implemented
+    private static JButton restart = new JButton("restart");
 
     public static Game_Info database_item = new Game_Info();
 
