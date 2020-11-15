@@ -4,6 +4,6 @@ public interface StartGameScreen {
     void GameSetting();
     void SetDifficulty(String str);
     void DisplayWordorImages(String str);
-    Boolean MarathonPlay();
+    boolean MarathonPlay();
     void AddTimer();
 }

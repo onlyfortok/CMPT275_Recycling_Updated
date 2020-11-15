@@ -2,6 +2,7 @@ package GUI;
 
 import Game.GAME_GUI;
 import Game.MainGameScreen;
+import Game.StartingGameScreen;
 
 import javax.swing.*;
 import java.awt.*;
@@ -34,7 +35,9 @@ public class GUI implements MainGameScreen{
         b1.addActionListener(new ActionListener()
         {
             public void actionPerformed(ActionEvent e) {
-                       GAME_GUI G = new GAME_GUI();
+                StartingGameScreen g = new StartingGameScreen();
+                g.run();
+
             }
         });
 
@@ -67,7 +70,6 @@ public class GUI implements MainGameScreen{
     public static void main(String[] args) {
                GUI g = new GUI();
                 g.run();
-               System.out.println("This is working");
 
     }
 }
