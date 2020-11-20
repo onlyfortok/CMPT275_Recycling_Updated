@@ -5,4 +5,6 @@ public interface MainGameScreen {
     void PlayGame();
     void HowToPlay();
     void Setting();
+    void GameStatistics();
+    void AboutUs();
 }
