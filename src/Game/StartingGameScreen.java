@@ -24,6 +24,7 @@ public class StartingGameScreen implements StartGameScreen{
     private JRadioButton r4 = new JRadioButton(); // Images
     private JRadioButton r5 = new JRadioButton(); // Words
     // Need to make button group again
+
     private JRadioButton r6 = new JRadioButton(); // For timer
 
     private JButton b1 = new JButton("Start Game");
