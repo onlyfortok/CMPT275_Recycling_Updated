@@ -41,6 +41,7 @@ public class HowToPlayGUI implements HowToPlayScreen {
         backButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
+                frame.dispose();
                 GUI g = new GUI();
                 g.run();
             }

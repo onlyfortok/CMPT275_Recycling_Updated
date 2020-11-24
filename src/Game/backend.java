@@ -1,16 +1,15 @@
 package Game;
 
 public interface backend {
-    String retrieveGameStatisctics();
+    String retrieveGameStatistics();
     String retrieveHowtoPlay();
     String retrieveScoreHistory();
     String retrieveNewGameItem();
     String retrieveSound();
-    String retrieveBackgorundColor();
+    String retrieveBackgroundColor();
     void DisplayGeneralGameOptions();
     void DisplayGameStatistics();
     void displayHowtoPlay();
     void displayResetScoreHistory();
     void displayNewGameItem();
-
 }

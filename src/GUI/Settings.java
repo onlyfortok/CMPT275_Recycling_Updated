@@ -4,13 +4,11 @@ package GUI;
 import Game.GUIOtherSettingScreen;
 
 import javax.swing.*;
+import java.awt.Dimension;
+import java.awt.Image;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import java.awt.image.BufferedImage;
-import java.io.File;
-import java.io.IOException;
-import javax.imageio.ImageIO;
 
 public class Settings implements GUIOtherSettingScreen{
     private JFrame frame = new JFrame("RecycleMania");
@@ -29,10 +27,20 @@ public class Settings implements GUIOtherSettingScreen{
     private JRadioButton maroonRadioButton;
     private JRadioButton ONRadioButton;
     private JRadioButton OFFRadioButton;
+    private JPanel background;
+    private Image image;
+    private Color background_color;
+    private Color theme_color;
+
 
     public Settings() {
 
-        frame.add(main_panel);
+        frame.add(background);
+
+        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        frame.setPreferredSize(new Dimension(650, 600));
+        frame.pack();
+        frame.setVisible(true);
 
         ButtonGroup backgrnd_group = new ButtonGroup();
         backgrnd_group.add(abstractRadioButton);
@@ -55,112 +63,159 @@ public class Settings implements GUIOtherSettingScreen{
         sound_group.add(OFFRadioButton);
         ONRadioButton.setSelected(true); //default sound
 
-        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        frame.setPreferredSize(new Dimension(650, 600));
-        frame.pack();
-        frame.setVisible(true);
+
+
 
         backButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
+                frame.dispose();
                 GUI g = new GUI();
                 g.run();
             }
         });
 
-
+        //backgrounds
         abstractRadioButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                try {
-                    changeBackgroundColor("Default");
-                } catch (IOException ioException) {
-                    ioException.printStackTrace();
-                }
+                changeBackgroundColor("Forest Green");
             }
         });
         blueSkyRadioButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                try {
-                    changeBackgroundColor("Blue sky");
-                } catch (IOException ioException) {
-                    ioException.printStackTrace();
-                }
+                changeBackgroundColor("Blue sky");
             }
         });
         brownWoodenRadioButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                try {
-                    changeBackgroundColor("Brown wooden");
-                } catch (IOException ioException) {
-                    ioException.printStackTrace();
-                }
+                changeBackgroundColor("Brown wooden");
             }
         });
         oliveRadioButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                try {
-                    changeBackgroundColor("Olive");
-                } catch (IOException ioException) {
-                    ioException.printStackTrace();
-                }
+                changeBackgroundColor("Olive");
             }
         });
         tealRadioButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                try {
-                    changeBackgroundColor("Teal");
-                } catch (IOException ioException) {
-                    ioException.printStackTrace();
-                }
+                changeBackgroundColor("Teal");
             }
         });
 
+        //themes
         blackRadioButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-
+                changeTheme("Black");
             }
         });
         darkGreyRadioButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-
+                changeTheme("Dark Grey");
             }
         });
         navyRadioButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-
+                changeTheme("Navy");
             }
         });
         greenRadioButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-
+                changeTheme("Green");
             }
         });
         maroonRadioButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-
+                changeTheme("Maroon");
             }
         });
     }
-    @Override
-    public void changeBackgroundColor(String str) throws IOException {
-        str = str + ".jpg";
-        str = "CMPT275_Recycling_Updated\\Background\\"+str;
-        BufferedImage backgroundImage = ImageIO.read(new File(str));
-        ImageIcon image = new ImageIcon(backgroundImage);
 
+    public Color getTheme_color(){
+        return theme_color;
+    }
+
+    public Color getBackground_color(){
+        return background_color;
+    }
+    @Override
+    public void changeBackgroundColor(String str) {
+        int R, G, B;
+
+        if (str=="Blue sky"){
+            R=51;
+            G=204;
+            B=255;
+            background_color = new Color(R,G,B);
+        }
+        if(str=="Teal"){
+            R=0;
+            G=128;
+            B=128;
+            background_color = new Color(R,G,B);
+        }
+        if(str=="Olive"){
+            R=128;
+            G=128;
+            B=0;
+            background_color = new Color(R,G,B);
+        }
+        if(str=="Brown wooden"){
+            R=153;
+            G=102;
+            B=0;
+            background_color = new Color(R,G,B);
+        }
+        if(str=="Forest Green"){
+            R=0;
+            G=153;
+            B=0;
+            background_color = new Color(R,G,B);
+        }
     }
     @Override
     public void changeTheme(String str){
+        int R, G, B;
+
+        if (str=="Black"){
+            R=51;
+            G=204;
+            B=255;
+            theme_color = new Color(R,G,B);
+        }
+        if(str=="Dark Grey"){
+            R=0;
+            G=128;
+            B=128;
+            theme_color = new Color(R,G,B);
+        }
+        if(str=="Navy"){
+            R=128;
+            G=128;
+            B=0;
+            theme_color = new Color(R,G,B);
+        }
+        if(str=="Green"){
+            R=153;
+            G=102;
+            B=0;
+            theme_color = new Color(R,G,B);
+        }
+        if(str=="Maroon"){
+            R=0;
+            G=153;
+            B=0;
+            theme_color = new Color(R,G,B);
+        }
 
     }
     @Override
