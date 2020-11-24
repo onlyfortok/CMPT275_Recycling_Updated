@@ -55,7 +55,7 @@ public class PlayGui implements GamePlayScreen {
     }
 
     public static void main(String[] args) {
-        HowToPlayGUI g = new HowToPlayGUI();
+        PlayGui g = new PlayGui();
 
     }
 }
