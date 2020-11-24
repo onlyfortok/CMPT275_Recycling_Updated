@@ -10,6 +10,7 @@ public interface Game_parameters {
     //setter
     void set_difficultyLevel(String difficulty_level);
     void set_containers(String[] container_array);
+    //void set_theme();
 
 }
 
