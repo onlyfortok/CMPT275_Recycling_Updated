@@ -12,6 +12,8 @@ import javax.swing.JButton;
 import javax.swing.JFrame;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.nio.file.Path;
+import java.nio.file.Paths;
 
 public class GUI implements MainGameScreen{
 
@@ -23,10 +25,20 @@ public class GUI implements MainGameScreen{
     private JButton gameStatisticsButton;
     private JButton howToPlayButton;
     private JLabel RecycleMania;
+    private JPanel image_panel;
+    private Image image;
+    private Draw_Image Image_canvas;
 
     //constructor
     @Override
     public void GUI() {
+        String str;
+        str = "main_image.jpg";
+        Path path = Paths.get(str);
+        String location = String.valueOf(path.toAbsolutePath()); //holds the image path
+        image = new ImageIcon(location).getImage();
+        Image_canvas = new Draw_Image();
+        image_panel.add(Image_canvas);
         frame.add(main_panel);
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         frame.setPreferredSize(new Dimension(650, 600));
@@ -39,7 +51,8 @@ public class GUI implements MainGameScreen{
         playButton.addActionListener(new ActionListener()
         {
             public void actionPerformed(ActionEvent e) {
-                PlayGui g = new PlayGui();
+                frame.dispose();
+                GameSettings g = new GameSettings();
             }
         });
 
@@ -50,6 +63,8 @@ public class GUI implements MainGameScreen{
         howToPlayButton.addActionListener(new ActionListener()
         {
             public void actionPerformed(ActionEvent e) {
+
+                frame.dispose();
                 HowToPlayGUI g = new HowToPlayGUI();
             }
 
@@ -61,6 +76,7 @@ public class GUI implements MainGameScreen{
         settingsButton.addActionListener(new ActionListener()
         {
             public void actionPerformed(ActionEvent e) {
+                frame.dispose();
                 Settings g = new Settings();
 
             }
@@ -72,6 +88,7 @@ public class GUI implements MainGameScreen{
         gameStatisticsButton.addActionListener(new ActionListener()
         {
             public void actionPerformed(ActionEvent e) {
+                frame.dispose();
                 GameStatistics g = new GameStatistics();
             }
         });
@@ -82,11 +99,18 @@ public class GUI implements MainGameScreen{
         aboutUsButton.addActionListener(new ActionListener()
         {
             public void actionPerformed(ActionEvent e) {
+                frame.dispose();
                 AboutUs g = new AboutUs();
             }
         });
     }
-
+    private class Draw_Image extends JPanel{
+        @Override
+        public void paintComponent(Graphics g){
+            super.paintComponent(g);
+            g.drawImage(image,0,0,this.getWidth(),this.getHeight(),null);
+        }
+    }
 
     public void run()
     {
