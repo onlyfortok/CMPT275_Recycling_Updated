@@ -16,7 +16,7 @@ import java.awt.event.ActionListener;
 public class AboutUs extends JFrame {
     private JFrame frame = new JFrame("RecycleMania");
     private JPanel main_panel;
-    //private JLabel RecycleMania;
+    private JLabel RecycleMania;
     private JButton backButton;
 
     public AboutUs() {
