@@ -109,7 +109,7 @@ public class StartingGameScreen implements StartGameScreen{
                 Game_Info G1 = new Game_Info();
 
 
-                G1.set_game_all_param(Game_Theme, Game_Difficulty, Game_Item_type ,timer, Game_num_items);
+                G1.set_game_all_param(Game_Difficulty, Game_Item_type ,timer, Game_num_items);
                 GAME_GUI G = new GAME_GUI();
             }
         });
