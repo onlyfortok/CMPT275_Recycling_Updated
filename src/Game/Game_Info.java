@@ -58,8 +58,8 @@ public class Game_Info extends Data implements Game_parameters {
 
     //helps with intializing
     public void set_game_all_param(String param2, String param3, boolean param4, int param5 ){
-        this.item_types= param2;
-        this.difficultyLevel = param3;
+        this.item_types= param3;
+        this.difficultyLevel = param2;
         this.Timer = param4;
         this.max_number_items = param5;
     }
@@ -87,22 +87,42 @@ public class Game_Info extends Data implements Game_parameters {
     }
     public String get_difficultyLevel(){ return this.difficultyLevel; }
     public String[] get_containers(){return this.container;}
+    public String get_Item_type(){return this.item_types;}
 
+
+    //getters for words from database
     public String get_Hard_database_word(int counter_game){
-
         return HardDiffLevel_data[counter_game];
     }
     public String get_Normal_database_word(int counter_game){
-
         return mediumDiffLevel_data[counter_game];
     }
     public String get_Easy_database_word(int counter_game){
-
         return EasyDiffLevel_data[counter_game];
     }
+    //get Game_chosen
     public String getGame_Chosen(){
         return Game_Chosen;
     }
+    //get Hard image
+    public String get_Hard_database_image(int counter_game){
+        String temp = HardDiffLevel_data[counter_game];
+        return "src/RecyclingImages/" + temp + ".jpg"; //filename to image
+    }
+    //get Normal image
+    public String get_Normal_database_image(int counter_game){
+        String temp = mediumDiffLevel_data[counter_game];
+        return "src/RecyclingImages/" + temp + ".jpg"; //filename to image
+    }
+    //get easy image
+    public String get_Easy_database_image(int counter_game){
+        String temp = EasyDiffLevel_data[counter_game];
+        return "src/RecyclingImages/" + temp + ".jpg"; //filename to image
+    }
+
+
+
+    //getters for images from database
 
     //setters
     public void set_counter(int i){ //i has to be between 0 and 5
@@ -111,6 +131,7 @@ public class Game_Info extends Data implements Game_parameters {
     public void set_score(int i){ //i has to be between 0 and 5
         this.counter = i;
     }
+
     public void set_difficultyLevel(String difficulty_level){ this.difficultyLevel = difficulty_level;}
     public void set_containers(String[] container_array){this.container = container_array;} //not too sure if you can set an array equal to another array in java
     public void set_score_history(double score){array_full_of_scores.add(score);}

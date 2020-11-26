@@ -50,10 +50,12 @@ public class GameSettings {
                 System.out.println(Game_Difficulty);
                 PlayGui g = new PlayGui();
                 g.SetGameGUIParam( Game_Difficulty, Game_Item_type ,timer, Game_num_items);
-                g.display_word_from_database();
-
+                g.start_word_or_images();
             }
         });
+
+
+
 
         backButton.addActionListener(new ActionListener() {
             @Override
@@ -112,8 +114,6 @@ public class GameSettings {
         }
 
     }
-
-
 
     public static void main(String[] args) {
         GameSettings g = new GameSettings();
