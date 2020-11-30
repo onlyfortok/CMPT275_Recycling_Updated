@@ -45,6 +45,24 @@ public class PlayGui implements GamePlayScreen {
         setting_containers(); //Setting the containers in the Gui
         setting_Radio_buttons();//Setting the radio buttons in the Gui
 
+
+        //prev button
+        prevButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                G1.decrease_counter();
+                if(G1.get_Item_type().equals("Words")){ //this is all good
+                    display_word_from_database();
+                }
+                if(G1.get_Item_type().equals("Images")){ // this might need testing
+                    display_image_from_database();
+                }
+                    //counter is dealt with but not the score yet
+            }
+        });
+
+
+        //this button is good
         nextButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {

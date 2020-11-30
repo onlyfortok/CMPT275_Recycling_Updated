@@ -149,6 +149,10 @@ public class Game_Info extends Data implements Game_parameters {
     public void increase_counter(){ //i has to be between 0 and 5
         this.counter = this.counter+1;
     }
+    public void decrease_counter(){ //i has to be between 0 and 5
+        this.counter = this.counter-1;
+    }
+
     public void reset_counter(){ //i has to be between 0 and 5
         this.counter = 0;
     }
