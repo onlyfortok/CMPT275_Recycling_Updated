@@ -45,9 +45,6 @@ public class PlayGui implements GamePlayScreen {
             r= Integer.parseInt(num[0]);
             g= Integer.parseInt(num[1]);
             b= Integer.parseInt(num[2]);
-            System.out.println(r);
-            System.out.println(g);
-            System.out.println(b);
             bkg = new Color(r,g,b);
         }
         br.close();
@@ -63,9 +60,6 @@ public class PlayGui implements GamePlayScreen {
             r=Integer.parseInt(num[0]);
             g= Integer.parseInt(num[1]);
             b= Integer.parseInt(num[2]);
-            System.out.println(r);
-            System.out.println(g);
-            System.out.println(b);
             thm = new Color(r,g,b);
 
         }
