@@ -12,6 +12,7 @@ import javax.swing.JButton;
 import javax.swing.JFrame;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.io.IOException;
 import java.nio.file.Path;
 import java.nio.file.Paths;
 
@@ -89,7 +90,11 @@ public class GUI implements MainGameScreen{
         {
             public void actionPerformed(ActionEvent e) {
                 frame.dispose();
-                GameStatistics g = new GameStatistics();
+                try {
+                    GameStatistics g = new GameStatistics();
+                } catch (IOException ioException) {
+                    ioException.printStackTrace();
+                }
             }
         });
     }

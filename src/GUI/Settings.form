@@ -128,16 +128,6 @@
               <text value="Brown wooden"/>
             </properties>
           </component>
-          <component id="7309e" class="javax.swing.JRadioButton" binding="blackRadioButton" default-binding="true">
-            <constraints>
-              <grid row="8" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
-            </constraints>
-            <properties>
-              <background color="-473999"/>
-              <font name="Papyrus" size="12" style="1"/>
-              <text value="Black"/>
-            </properties>
-          </component>
           <component id="eab35" class="javax.swing.JRadioButton" binding="darkGreyRadioButton" default-binding="true">
             <constraints>
               <grid row="8" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
@@ -158,28 +148,6 @@
               <font name="Papyrus" size="12" style="1"/>
               <foreground color="-16777088"/>
               <text value="Navy"/>
-            </properties>
-          </component>
-          <component id="e35d6" class="javax.swing.JRadioButton" binding="greenRadioButton" default-binding="true">
-            <constraints>
-              <grid row="8" column="3" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
-            </constraints>
-            <properties>
-              <background color="-473999"/>
-              <font name="Papyrus" size="12" style="1"/>
-              <foreground color="-16744448"/>
-              <text value="Green"/>
-            </properties>
-          </component>
-          <component id="19921" class="javax.swing.JRadioButton" binding="maroonRadioButton" default-binding="true">
-            <constraints>
-              <grid row="8" column="4" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
-            </constraints>
-            <properties>
-              <background color="-473999"/>
-              <font name="Papyrus" size="12" style="1"/>
-              <foreground color="-8388608"/>
-              <text value="Maroon"/>
             </properties>
           </component>
           <component id="6c61c" class="javax.swing.JLabel">
@@ -267,6 +235,27 @@
             <properties>
               <font name="Papyrus" size="24" style="1"/>
               <text value="Settings"/>
+            </properties>
+          </component>
+          <component id="19921" class="javax.swing.JRadioButton" binding="maroonRadioButton" default-binding="true">
+            <constraints>
+              <grid row="8" column="3" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
+            </constraints>
+            <properties>
+              <background color="-473999"/>
+              <font name="Papyrus" size="12" style="1"/>
+              <foreground color="-8388608"/>
+              <text value="Maroon"/>
+            </properties>
+          </component>
+          <component id="c4b0b" class="javax.swing.JRadioButton" binding="greenRadioButton">
+            <constraints>
+              <grid row="8" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
+            </constraints>
+            <properties>
+              <background color="-473999"/>
+              <font name="Papyrus" size="12" style="1"/>
+              <text value="Green"/>
             </properties>
           </component>
         </children>
