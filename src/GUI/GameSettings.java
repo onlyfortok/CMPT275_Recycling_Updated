@@ -4,6 +4,7 @@ import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.io.IOException;
 
 public class GameSettings {
     private JFrame frame = new JFrame("RecycleMania");
@@ -35,7 +36,11 @@ public class GameSettings {
             public void actionPerformed(ActionEvent e) {
 
                 frame.dispose();
-                PlayGui g = new PlayGui();
+                try {
+                    PlayGui g = new PlayGui();
+                } catch (IOException ioException) {
+                    ioException.printStackTrace();
+                }
             }
         });
 
