@@ -231,7 +231,7 @@ public class PlayGui implements GamePlayScreen {
         if(G1.get_counter()==G1.get_max_number_items()-1){ //-1 because it goes from 0 to 14
             double final_score = G1.get_calculated_score();
             nextButton.setText("End");
-            progressTextField.setText(String.valueOf(final_score));
+            progressTextField.setText("Your Score is: " + String.valueOf(final_score));
         }
     }
 
