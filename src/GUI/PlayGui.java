@@ -14,6 +14,7 @@ import java.awt.event.ActionListener;
 import java.io.*;
 import java.nio.file.Path;
 import java.nio.file.Paths;
+import java.util.concurrent.TimeUnit;
 
 public class PlayGui implements GamePlayScreen {
     private JFrame frame = new JFrame("RecycleMania");
@@ -72,7 +73,11 @@ public class PlayGui implements GamePlayScreen {
         nextButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                Give_userInput_for_ScoreChecking();//Check if user has gotten correct answer
+                try {
+                    Give_userInput_for_ScoreChecking();//Check if user has gotten correct answer
+                } catch (InterruptedException interruptedException) {
+                    interruptedException.printStackTrace();
+                }
                 G1.increase_counter(); //go to next word
 
                 //System.out.println( G1.get_score());//debugging purposes
@@ -83,6 +88,14 @@ public class PlayGui implements GamePlayScreen {
                 if(G1.get_Item_type().equals("Images")){ // this might need testing
                     display_image_from_database();
                 }
+
+//                if(G1.get_Game_is_done() == true){
+//
+//                    nextButton.setText("Back to Main GUI");
+//                    frame.dispose();
+//                    GUI g = new GUI();
+//                    g.run();
+//                }
 
             }
         });
@@ -198,17 +211,17 @@ public class PlayGui implements GamePlayScreen {
         }
         else{
             word_or_image_panel.remove(image_temp);
-            image_temp.setHorizontalAlignment(SwingConstants.CENTER);
             image_temp.setIcon(null);
-            image_temp.setIcon(img1);
+            image_temp.setHorizontalAlignment(SwingConstants.CENTER);
             word_or_image_panel.add(image_temp);
+
         }
 
 
     }
 
     //Set Score
-    public void Give_userInput_for_ScoreChecking(){
+    public void Give_userInput_for_ScoreChecking() throws InterruptedException {
         if(b1.isSelected()){
             G1.set_Current_user_word("Bottles/Cans");
         }
@@ -231,19 +244,8 @@ public class PlayGui implements GamePlayScreen {
         if(G1.get_counter()==G1.get_max_number_items()-1){ //-1 because it goes from 0 to 14
             int final_score = G1.get_calculated_score();
             nextButton.setText("End");
-
             progressTextField.setText("Your Score is: " + String.valueOf(final_score) +"%");
-            //pause for 3 seconds
-            //exit this current frame
-            //go back to the Main GUI screen
-
-
-            progressTextField.setText(String.valueOf(final_score));
-
-            frame.dispose();
-            GUI g = new GUI();
-            g.run();
-
+            G1.set_game_is_done(true);
         }
     }
 
