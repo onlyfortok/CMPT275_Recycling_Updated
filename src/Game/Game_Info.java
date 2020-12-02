@@ -45,13 +45,13 @@ public class Game_Info extends Data implements Game_parameters {
         }
         else if(difficultyLevel.equals("Normal")){
             mediumDiffLevel_data = Database.MediumWordData(arr, size);
-             mediumDiffLevel_answer = Database.MediumAnsData(arr, size);
-             Game_Chosen = "Normal";
+            mediumDiffLevel_answer = Database.MediumAnsData(arr, size);
+            Game_Chosen = "Normal";
         }
         else{ //difficulty is easy
-             EasyDiffLevel_data = Database.EasyWordData(arr, size);
-             EasyDiffLevel_answer = Database.EasyAnsData(arr, size);
-             Game_Chosen = "Easy";
+            EasyDiffLevel_data = Database.EasyWordData(arr, size);
+            EasyDiffLevel_answer = Database.EasyAnsData(arr, size);
+            Game_Chosen = "Easy";
         }
     }
 
@@ -149,6 +149,10 @@ public class Game_Info extends Data implements Game_parameters {
     public void increase_counter(){ //i has to be between 0 and 5
         this.counter = this.counter+1;
     }
+    public void decrease_counter(){ //i has to be between 0 and 5
+        this.counter = this.counter-1;
+    }
+
     public void reset_counter(){ //i has to be between 0 and 5
         this.counter = 0;
     }
