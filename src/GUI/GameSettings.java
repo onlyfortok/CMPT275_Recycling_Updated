@@ -1,5 +1,7 @@
 package GUI;
 
+import Game.Game_Info;
+
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
@@ -36,13 +38,33 @@ public class GameSettings {
             public void actionPerformed(ActionEvent e) {
 
                 frame.dispose();
+                //get all the info from the button groups
+                //difficultly
+                String Game_Difficulty = get_Difficulty();
+                // item_type
+                String Game_Item_type = get_Item_type();
+                //timers
+                boolean timer = get_Timer(); //true if it is selected
+                //num of items
+                int Game_num_items = get_Item_num();
+
+                System.out.println(Game_Difficulty);
+
+                PlayGui g = null;
                 try {
-                    PlayGui g = new PlayGui();
+                    g = new PlayGui();
                 } catch (IOException ioException) {
                     ioException.printStackTrace();
                 }
+                g.SetGameGUIParam( Game_Difficulty, Game_Item_type ,timer, Game_num_items);
+                    g.start_word_or_images();
+
+
             }
         });
+
+
+
 
         backButton.addActionListener(new ActionListener() {
             @Override
@@ -53,6 +75,55 @@ public class GameSettings {
             }
         });
     }
+
+    //getter for difficulty
+    public String get_Difficulty(){
+        if(easyRadioButton.isSelected()){
+            return "Easy";
+        }
+        else if(normalRadioButton.isSelected()){
+            return "Normal";
+        }
+        else if(hardRadioButton.isSelected()){
+            return "Hard";
+        }
+        return "";
+    }
+    //getter for item type
+    public String get_Item_type(){
+        if(wordsAndImagesRadioButton.isSelected()){
+            return "Images";
+        }
+        if(wordsRadioButton.isSelected()) {
+            return "Words";
+        }
+        return "";
+    }
+    //getter for item numbers
+    public int get_Item_num(){
+        if(a5RadioButton.isSelected()){
+            return 5;
+        }
+        else if(a10RadioButton.isSelected()){
+            return 10;
+        }
+        else if(a15RadioButton.isSelected()){
+            return 15;
+        }
+        return 0;
+    }
+
+
+    public boolean get_Timer(){
+        if(ONRadioButton.isSelected()){
+            return true;
+        }
+        else{
+            return false;
+        }
+
+    }
+
     public static void main(String[] args) {
         GameSettings g = new GameSettings();
     }

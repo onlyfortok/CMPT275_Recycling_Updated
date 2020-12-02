@@ -24,7 +24,7 @@ public class Game_Info extends Data implements Game_parameters {
     protected String[] items = {"Vase", "Cans", "Sandwich", "Punch Bowl","Bong"};
     protected String[] answers = {"Glass", "Metal", "Organic", "Glass","Glass"};
     protected String[] container = {"Glass","Metal","Organic"};
-    protected String[] track_of_scores = {"","","","",""}; //record yes for correct, no for wrong
+    protected String[] track_of_scores = {"","","","","","","","","","","","","","",""}; //record yes for correct, no for wrong
     protected static List<Double> array_full_of_scores; // we want this to be static
     public Data Database = new Data();
 
@@ -82,6 +82,15 @@ public class Game_Info extends Data implements Game_parameters {
     public int get_score(){ //i has to be between 0 and 5
         return this.score;
     }
+    public double get_calculated_score(){ //i has to be between 0 and 5
+        double temp_score=0;
+        for(int i=0; i<this.max_number_items;i++) {
+            if(this.track_of_scores[i].equals("yes")) {
+                temp_score +=1;
+            }
+            }
+        return (temp_score/this.max_number_items);
+    }
     public String get_answer(int i){ //i has to be between 0 and 5
         return this.answers[i];
     }
@@ -137,7 +146,6 @@ public class Game_Info extends Data implements Game_parameters {
     public void set_score_history(double score){array_full_of_scores.add(score);}
     public void set_Current_user_word(String current_word){
         this.user_current_word = current_word;
-
     }
 
 
@@ -163,16 +171,28 @@ public class Game_Info extends Data implements Game_parameters {
         if(Game_Chosen.equals("Hard")){
             if(user_current_word.equals(HardDiffLevel_answer[this.counter])){
                 increase_score();
+                this.track_of_scores[this.counter] = "yes";
+            }
+            else{
+                this.track_of_scores[this.counter] = "no";
             }
         }
         if(Game_Chosen.equals("Normal")){
             if(user_current_word.equals(mediumDiffLevel_answer[this.counter])){
                 increase_score();
+                this.track_of_scores[this.counter] = "yes";
+            }
+            else{
+                this.track_of_scores[this.counter] = "no";
             }
         }
         if(Game_Chosen.equals("Easy")){
             if(user_current_word.equals( EasyDiffLevel_answer[this.counter])){
                 increase_score();
+                this.track_of_scores[this.counter] = "yes";
+            }
+            else{
+                this.track_of_scores[this.counter] = "no";
             }
         }
     }
