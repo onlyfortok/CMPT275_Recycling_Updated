@@ -229,9 +229,13 @@ public class PlayGui implements GamePlayScreen {
         }
         G1.check_answer(); //checks the answer and increases score if it is corret
         if(G1.get_counter()==G1.get_max_number_items()-1){ //-1 because it goes from 0 to 14
-            double final_score = G1.get_calculated_score();
+            int final_score = G1.get_calculated_score();
             nextButton.setText("End");
-            progressTextField.setText("Your Score is: " + String.valueOf(final_score));
+            progressTextField.setText("Your Score is: " + String.valueOf(final_score) +"%");
+            //pause for 3 seconds
+            //exit this current frame
+            //go back to the Main GUI screen
+
         }
     }
 
