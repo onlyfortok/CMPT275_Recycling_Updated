@@ -49,6 +49,7 @@ public class GameSettings {
                 int Game_num_items = get_Item_num();
 
                 System.out.println(Game_Difficulty);
+
                 PlayGui g = null;
                 try {
                     g = new PlayGui();
@@ -56,7 +57,9 @@ public class GameSettings {
                     ioException.printStackTrace();
                 }
                 g.SetGameGUIParam( Game_Difficulty, Game_Item_type ,timer, Game_num_items);
-                g.start_word_or_images();
+                    g.start_word_or_images();
+
+
             }
         });
 

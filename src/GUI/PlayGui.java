@@ -76,9 +76,7 @@ public class PlayGui implements GamePlayScreen {
                 G1.increase_counter(); //go to next word
 
                 //System.out.println( G1.get_score());//debugging purposes
-
                 //Checks which item_type has been selected by user
-
                 if(G1.get_Item_type().equals("Words")){ //this is all good
                     display_word_from_database();
                 }
@@ -230,6 +228,11 @@ public class PlayGui implements GamePlayScreen {
             G1.set_Current_user_word("Trash");
         }
         G1.check_answer(); //checks the answer and increases score if it is corret
+        if(G1.get_counter()==G1.get_max_number_items()-1){ //-1 because it goes from 0 to 14
+            double final_score = G1.get_calculated_score();
+            nextButton.setText("End");
+            progressTextField.setText(String.valueOf(final_score));
+        }
     }
 
 
