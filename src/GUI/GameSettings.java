@@ -87,7 +87,7 @@ public class GameSettings {
         else if(hardRadioButton.isSelected()){
             return "Hard";
         }
-        return "";
+        return "Easy";
     }
     //getter for item type
     public String get_Item_type(){
@@ -97,7 +97,7 @@ public class GameSettings {
         if(wordsRadioButton.isSelected()) {
             return "Words";
         }
-        return "";
+        return "Images";
     }
     //getter for item numbers
     public int get_Item_num(){
@@ -110,7 +110,7 @@ public class GameSettings {
         else if(a15RadioButton.isSelected()){
             return 15;
         }
-        return 0;
+        return 5;
     }
 
 
@@ -119,7 +119,7 @@ public class GameSettings {
             return true;
         }
         else{
-            return false;
+            return false; //also the default
         }
 
     }

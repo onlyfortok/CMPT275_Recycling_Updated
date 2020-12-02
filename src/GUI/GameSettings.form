@@ -3,7 +3,7 @@
   <grid id="27dc6" layout-manager="GridLayoutManager" row-count="1" column-count="1" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
     <margin top="0" left="0" bottom="0" right="0"/>
     <constraints>
-      <xy x="20" y="20" width="578" height="602"/>
+      <xy x="20" y="20" width="675" height="627"/>
     </constraints>
     <properties/>
     <border type="none"/>
@@ -20,7 +20,7 @@
         <children>
           <component id="f6d5e" class="javax.swing.JLabel">
             <constraints>
-              <grid row="3" column="0" row-span="1" col-span="3" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
+              <grid row="1" column="0" row-span="1" col-span="3" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
             </constraints>
             <properties>
               <font name="Papyrus" size="24" style="1"/>
@@ -189,12 +189,12 @@
             <properties>
               <background color="-473999"/>
               <font name="Papyrus" size="12" style="1"/>
-              <text value="Words and Images"/>
+              <text value="Images"/>
             </properties>
           </component>
           <component id="bc574" class="javax.swing.JLabel">
             <constraints>
-              <grid row="4" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
+              <grid row="2" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
             </constraints>
             <properties>
               <text value="       "/>
@@ -247,20 +247,22 @@
               <text value="           "/>
             </properties>
           </component>
-          <component id="e8d0a" class="javax.swing.JLabel">
+          <component id="340d2" class="javax.swing.JLabel">
             <constraints>
-              <grid row="1" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
+              <grid row="3" column="0" row-span="1" col-span="2" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
             </constraints>
             <properties>
-              <text value="           "/>
+              <font name="Papyrus" size="12" style="1"/>
+              <text value="Customize game by selecting one of the options in each section"/>
             </properties>
           </component>
-          <component id="13254" class="javax.swing.JLabel">
+          <component id="10172" class="javax.swing.JLabel">
             <constraints>
-              <grid row="2" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
+              <grid row="4" column="0" row-span="1" col-span="2" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
             </constraints>
             <properties>
-              <text value="          "/>
+              <font name="Papyrus" size="12" style="1"/>
+              <text value="For no input, default values are 5, Easy, Images and OFF"/>
             </properties>
           </component>
         </children>

@@ -231,10 +231,18 @@ public class PlayGui implements GamePlayScreen {
         if(G1.get_counter()==G1.get_max_number_items()-1){ //-1 because it goes from 0 to 14
             int final_score = G1.get_calculated_score();
             nextButton.setText("End");
+
             progressTextField.setText("Your Score is: " + String.valueOf(final_score) +"%");
             //pause for 3 seconds
             //exit this current frame
             //go back to the Main GUI screen
+
+
+            progressTextField.setText(String.valueOf(final_score));
+
+            frame.dispose();
+            GUI g = new GUI();
+            g.run();
 
         }
     }
