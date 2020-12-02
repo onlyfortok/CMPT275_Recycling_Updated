@@ -189,7 +189,7 @@
             <properties>
               <background color="-473999"/>
               <font name="Papyrus" size="12" style="1"/>
-              <text value="Words and Images"/>
+              <text value="Images"/>
             </properties>
           </component>
           <component id="bc574" class="javax.swing.JLabel">
