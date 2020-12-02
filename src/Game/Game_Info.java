@@ -82,14 +82,16 @@ public class Game_Info extends Data implements Game_parameters {
     public int get_score(){ //i has to be between 0 and 5
         return this.score;
     }
-    public double get_calculated_score(){ //i has to be between 0 and 5
+    public int get_calculated_score(){ //i has to be between 0 and 5
         double temp_score=0;
         for(int i=0; i<this.max_number_items;i++) {
             if(this.track_of_scores[i].equals("yes")) {
                 temp_score +=1;
             }
             }
-        return (temp_score/this.max_number_items);
+        double temp_answer= temp_score/this.max_number_items;
+        int y = (int) Math.floor(temp_answer * 100);
+        return y;
     }
     public String get_answer(int i){ //i has to be between 0 and 5
         return this.answers[i];
@@ -155,10 +157,20 @@ public class Game_Info extends Data implements Game_parameters {
         this.score = this.score +1;
     }
     public void increase_counter(){ //i has to be between 0 and 5
-        this.counter = this.counter+1;
+        if(this.counter == max_number_items-1){
+            //do nothing
+        }
+        else{
+            this.counter = this.counter+1;
+        }
     }
     public void decrease_counter(){ //i has to be between 0 and 5
-        this.counter = this.counter-1;
+        if(this.counter == 0){
+            //do nothing
+        }
+        else{
+            this.counter = this.counter-1;
+        }
     }
 
     public void reset_counter(){ //i has to be between 0 and 5
