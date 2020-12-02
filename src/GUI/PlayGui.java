@@ -232,6 +232,10 @@ public class PlayGui implements GamePlayScreen {
             double final_score = G1.get_calculated_score();
             nextButton.setText("End");
             progressTextField.setText(String.valueOf(final_score));
+
+            frame.dispose();
+            GUI g = new GUI();
+            g.run();
         }
     }
 
