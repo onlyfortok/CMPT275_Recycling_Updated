@@ -210,9 +210,11 @@ public class PlayGui implements GamePlayScreen {
             word_or_image_panel.add(image_temp);
         }
         else{
-            word_or_image_panel.remove(image_temp);
+
             image_temp.setIcon(null);
+            image_temp.setIcon(img1);
             image_temp.setHorizontalAlignment(SwingConstants.CENTER);
+            word_or_image_panel.remove(image_temp);
             word_or_image_panel.add(image_temp);
 
         }
@@ -245,7 +247,7 @@ public class PlayGui implements GamePlayScreen {
             int final_score = G1.get_calculated_score();
             nextButton.setText("End");
             progressTextField.setText("Your Score is: " + String.valueOf(final_score) +"%");
-            G1.set_game_is_done(true);
+
         }
     }
 
