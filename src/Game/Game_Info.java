@@ -1,6 +1,5 @@
 package Game;
 import java.util.*;
-
 public class Game_Info extends Data implements Game_parameters {
     protected int max_number_items=5; // num of items
     protected int counter=0; // counter will record item number
@@ -9,7 +8,6 @@ public class Game_Info extends Data implements Game_parameters {
     protected String item_types = "";
     protected boolean Timer = false;
     protected String user_current_word;
-
     //Which array is selected
     protected String [] HardDiffLevel_data;
     protected String [] HardDiffLevel_answer;
@@ -19,20 +17,14 @@ public class Game_Info extends Data implements Game_parameters {
     protected String [] EasyDiffLevel_answer;
     protected String Game_Chosen = "";
     protected String [] answer= {"Bottles/Cans","E-Waste","Mixed Paper","Organics","Plastics","Trash"};
-
-
     protected String[] items = {"Vase", "Cans", "Sandwich", "Punch Bowl","Bong"};
     protected String[] answers = {"Glass", "Metal", "Organic", "Glass","Glass"};
     protected String[] container = {"Glass","Metal","Organic"};
     protected String[] track_of_scores = {"","","","","","","","","","","","","","",""}; //record yes for correct, no for wrong
     protected static List<Double> array_full_of_scores; // we want this to be static
     public Data Database = new Data();
-
-
-
     public Game_Info(){
     }
-
     //if the user selects word option then this function will pick the database
     public void pick_Database_word_array(){
         int size = max_number_items;
@@ -54,8 +46,6 @@ public class Game_Info extends Data implements Game_parameters {
             Game_Chosen = "Easy";
         }
     }
-
-
     //helps with intializing
     public void set_game_all_param(String param2, String param3, boolean param4, int param5 ){
         this.item_types= param3;
@@ -63,9 +53,6 @@ public class Game_Info extends Data implements Game_parameters {
         this.Timer = param4;
         this.max_number_items = param5;
     }
-
-
-
     //getters
     public String get_word(int i){ //i has to be between 0 and 5
         return this.items[i];
@@ -88,7 +75,7 @@ public class Game_Info extends Data implements Game_parameters {
             if(this.track_of_scores[i].equals("yes")) {
                 temp_score +=1;
             }
-            }
+        }
         return (temp_score/this.max_number_items) *100;
     }
     public String get_answer(int i){ //i has to be between 0 and 5
@@ -97,8 +84,6 @@ public class Game_Info extends Data implements Game_parameters {
     public String get_difficultyLevel(){ return this.difficultyLevel; }
     public String[] get_containers(){return this.container;}
     public String get_Item_type(){return this.item_types;}
-
-
     //getters for words from database
     public String get_Hard_database_word(int counter_game){
         return HardDiffLevel_data[counter_game];
@@ -128,11 +113,7 @@ public class Game_Info extends Data implements Game_parameters {
         String temp = EasyDiffLevel_data[counter_game];
         return "src/RecyclingImages/" + temp + ".jpg"; //filename to image
     }
-
-
-
     //getters for images from database
-
     //setters
     public void set_counter(int i){ //i has to be between 0 and 5
         this.counter = i;
@@ -140,27 +121,32 @@ public class Game_Info extends Data implements Game_parameters {
     public void set_score(int i){ //i has to be between 0 and 5
         this.counter = i;
     }
-
     public void set_difficultyLevel(String difficulty_level){ this.difficultyLevel = difficulty_level;}
     public void set_containers(String[] container_array){this.container = container_array;} //not too sure if you can set an array equal to another array in java
     public void set_score_history(double score){array_full_of_scores.add(score);}
     public void set_Current_user_word(String current_word){
         this.user_current_word = current_word;
     }
-
-
-
     // useful features
     public void increase_score(){ //i has to be between 0 and 5
         this.score = this.score +1;
     }
     public void increase_counter(){ //i has to be between 0 and 5
-        this.counter = this.counter+1;
+        if(this.counter == max_number_items-1){
+            //do nothing
+        }
+        else{
+            this.counter = this.counter+1;
+        }
     }
     public void decrease_counter(){ //i has to be between 0 and 5
-        this.counter = this.counter-1;
+        if(this.counter == 0){
+            //do nothing
+        }
+        else{
+            this.counter = this.counter-1;
+        }
     }
-
     public void reset_counter(){ //i has to be between 0 and 5
         this.counter = 0;
     }
@@ -196,7 +182,6 @@ public class Game_Info extends Data implements Game_parameters {
             }
         }
     }
-
     public void reset_score_history(double score){array_full_of_scores.removeAll(array_full_of_scores);}
     public String game_statistics(){
         int sum = 0;
@@ -204,8 +189,6 @@ public class Game_Info extends Data implements Game_parameters {
             sum += array_full_of_scores.get(i);
         }
         int mean = sum/this.array_full_of_scores.size();
-
         return String.valueOf(mean);
     }
-
 }
