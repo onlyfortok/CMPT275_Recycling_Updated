@@ -143,6 +143,12 @@ public class PlayGui implements GamePlayScreen {
         }
         br.close();
         Font wordFont = new Font("Papyrus",Font.BOLD,48);
+        b1.setFont(font);
+        b2.setFont(font);
+        b3.setFont(font);
+        b4.setFont(font);
+        b5.setFont(font);
+        b6.setFont(font);
         Word_Image.setFont(wordFont);
         main_panel.setBackground(bkg);
         RecycleBin_1.setBackground(bkg);
@@ -202,7 +208,7 @@ public class PlayGui implements GamePlayScreen {
         else{ //easy mode
             word = G1.get_Easy_database_image(G1.get_counter()); //G1 will store the counter to increment the scores and current position in array
         }
-        ImageIcon img1 = resize_containers(word); //img1 will be the image needed
+        ImageIcon img1 = resize_containers(word, 400, 250); //img1 will be the image needed
         System.out.println("this is the filename of the images: " +word);
         //first loop around
         if(G1.get_counter() == 0){//starting point
@@ -342,12 +348,12 @@ public class PlayGui implements GamePlayScreen {
     //this function specifies the location of the containers
     public void setting_containers(){
         panel.setBounds(20,350,600,300);
-        ImageIcon img1 = resize_containers("src/Bins/Bottles-Cans.jpg");//
-        ImageIcon img2 = resize_containers("src/Bins/E-Waste.jpg");
-        ImageIcon img3 = resize_containers("src/Bins/Mixed Paper.jpg");
-        ImageIcon img4 = resize_containers("src/Bins/Organics.jpg");
-        ImageIcon img5 = resize_containers("src/Bins/Plastics.jpg");
-        ImageIcon img6 = resize_containers("src/Bins/Trash.jpg");
+        ImageIcon img1 = resize_containers("src/Bins/Bottles-Cans.jpg", 100, 100);//
+        ImageIcon img2 = resize_containers("src/Bins/E-Waste.jpg", 100, 100);
+        ImageIcon img3 = resize_containers("src/Bins/Mixed Paper.jpg", 100, 100);
+        ImageIcon img4 = resize_containers("src/Bins/Organics.jpg", 100, 100);
+        ImageIcon img5 = resize_containers("src/Bins/Plastics.jpg", 100, 100);
+        ImageIcon img6 = resize_containers("src/Bins/Trash.jpg", 100, 100);
         panel.add(new JLabel(img1));
         panel.add(new JLabel(img2));
         panel.add(new JLabel(img3));
@@ -356,10 +362,10 @@ public class PlayGui implements GamePlayScreen {
         panel.add(new JLabel(img6));
     }
     //this will resize all the images
-    public ImageIcon resize_containers(String filename){
+    public ImageIcon resize_containers(String filename, int x, int y){
         ImageIcon imageIcon = new ImageIcon(filename); // load the image to a imageIcon
         Image image = imageIcon.getImage(); // transform it
-        Image newimg = image.getScaledInstance(100, 100,  java.awt.Image.SCALE_SMOOTH); // scale it the smooth way
+        Image newimg = image.getScaledInstance(x, y,  java.awt.Image.SCALE_SMOOTH); // scale it the smooth way
         imageIcon = new ImageIcon(newimg);  // transform it back
         return imageIcon;
     }
