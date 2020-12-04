@@ -5,8 +5,8 @@ import java.util.ArrayList;
 
 public class Data implements Database{
     protected String [] easyItems = {"Plastic Straws", "Shoe Box", "Egg Tray", "Broccoli", "Newspaper", "Broken Glass Cup", "Potato Chip Bag",
-    "Juice Box", "Banana Peel", "Pizza", "Greeting Cards", "Gift Bag", "Pizza Box", "Coffee Cup", "Laptop", "Homework", "Tin Can", "Plastic Clamshell"};
-    protected String [] mediumItems = {"Lotion Jars", "Receipts", "Party Cups", "Beer Bottles", "Ruler", "Egg Shells", " Baby Diapers","Avocado Seed",
+    "Juice Box", "Banana Peel", "Pizza", "Greeting Cards", "Gift Bag", "pizzabox", "Coffee Cup", "Laptop", "Homework", "Tin Can", "Plastic Clamshell"};
+    protected String [] mediumItems = {"Lotion Jars", "Receipts", "Party Cups", "Beer Bottles", "Ruler", "Egg Shells", "Baby Diapers","Avocado Seed",
      "Cup Noodles", "Chocolate Wrappers", "Milk Jug", "Watermelon","Milk Carton", "Soda Bottles", "Plastic Bags", "Plastic Rings", "Styrofoam", "Glass Jar"};
     protected String [] hardItems = {"Coffee Cup Lid", "Broken Mirror", "Latex Balloons", "Medicine Bottle", "Chewed Gum","Baby Wipes", "Gift Wrap","Toilet Cleaner",
              "Wine Box", "Packaging Peanuts","Envelopes", "Face Mask", "Paint Brushes", "Magazines", "Cookies", "Candy Wrappers", "Aluminium Foil", "Game Controller"};
