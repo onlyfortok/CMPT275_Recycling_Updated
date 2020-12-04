@@ -134,7 +134,10 @@ public class GUI implements MainGameScreen{
     public static void main(String[] args) {
         GUI g = new GUI();
         g.run();
-        SoundClass sound = new SoundClass();
+        for (int i = 0; i < 10; i++){
+            SoundClass sound = new SoundClass();
+        }
+
     }
 }
 
