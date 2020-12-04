@@ -142,6 +142,8 @@ public class PlayGui implements GamePlayScreen {
             thm = new Color(r,g,b);
         }
         br.close();
+        Font wordFont = new Font("Papyrus",Font.BOLD,48);
+        Word_Image.setFont(wordFont);
         main_panel.setBackground(bkg);
         RecycleBin_1.setBackground(bkg);
         word_or_image_panel.setBackground(bkg);

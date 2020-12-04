@@ -268,7 +268,7 @@
             </constraints>
             <properties>
               <font name="Papyrus" size="12" style="1"/>
-              <text value="For no input, default values are 5, Easy, Images and OFF"/>
+              <text value="For no input, default values are 5, Easy, Words and ON"/>
             </properties>
           </component>
         </children>

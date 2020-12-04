@@ -25,6 +25,25 @@ public class GameSettings {
     private JButton backButton;
 
     public GameSettings(){
+
+        ButtonGroup num_of_wordsGrp = new ButtonGroup();
+        num_of_wordsGrp.add(a5RadioButton);
+        num_of_wordsGrp.add(a10RadioButton);
+        num_of_wordsGrp.add(a15RadioButton);
+
+        ButtonGroup level_of_diffGrp = new ButtonGroup();
+        level_of_diffGrp.add(easyRadioButton);
+        level_of_diffGrp.add(normalRadioButton);
+        level_of_diffGrp.add(hardRadioButton);
+
+        ButtonGroup gameModeGrp = new ButtonGroup();
+        gameModeGrp.add(wordsRadioButton);
+        gameModeGrp.add(wordsAndImagesRadioButton);
+
+        ButtonGroup timerGrp = new ButtonGroup();
+        timerGrp.add(ONRadioButton);
+        timerGrp.add(OFFRadioButton);
+
         frame.add(main_panel);
 
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
