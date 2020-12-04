@@ -50,37 +50,13 @@
           <text value="Next"/>
         </properties>
       </component>
-      <component id="5c062" class="javax.swing.JLabel">
-        <constraints>
-          <grid row="0" column="7" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
-        </constraints>
-        <properties>
-          <font name="Papyrus" size="12" style="1"/>
-          <text value="status"/>
-        </properties>
-      </component>
-      <component id="d2d79" class="javax.swing.JLabel">
+      <component id="d2d79" class="javax.swing.JLabel" binding="TimerLabel">
         <constraints>
           <grid row="0" column="3" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
         </constraints>
         <properties>
-          <text value="                      "/>
-        </properties>
-      </component>
-      <component id="9f318" class="javax.swing.JLabel">
-        <constraints>
-          <grid row="0" column="5" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
-        </constraints>
-        <properties>
-          <text value="                         "/>
-        </properties>
-      </component>
-      <component id="4237" class="javax.swing.JLabel">
-        <constraints>
-          <grid row="0" column="6" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
-        </constraints>
-        <properties>
-          <text value="                         "/>
+          <font name="Papyrus" size="12" style="1"/>
+          <text value=""/>
         </properties>
       </component>
       <component id="4fa1c" class="javax.swing.JButton" binding="pauseButton" default-binding="true">
@@ -92,17 +68,42 @@
           <text value="Pause"/>
         </properties>
       </component>
-      <component id="ff647" class="javax.swing.JTextField" binding="progressTextField">
-        <constraints>
-          <grid row="0" column="8" row-span="1" col-span="1" vsize-policy="0" hsize-policy="6" anchor="8" fill="1" indent="0" use-parent-layout="false">
-            <preferred-size width="150" height="-1"/>
-          </grid>
-        </constraints>
-        <properties/>
-      </component>
       <component id="2f196" class="javax.swing.JLabel">
         <constraints>
           <grid row="0" column="9" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
+        </constraints>
+        <properties>
+          <text value=""/>
+        </properties>
+      </component>
+      <component id="adfa3" class="javax.swing.JLabel" binding="errorLabel">
+        <constraints>
+          <grid row="3" column="5" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
+        </constraints>
+        <properties>
+          <text value=""/>
+        </properties>
+      </component>
+      <component id="dabf0" class="javax.swing.JLabel" binding="progressLabel">
+        <constraints>
+          <grid row="0" column="8" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
+        </constraints>
+        <properties>
+          <text value=""/>
+        </properties>
+      </component>
+      <component id="5c062" class="javax.swing.JLabel">
+        <constraints>
+          <grid row="0" column="7" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
+        </constraints>
+        <properties>
+          <font name="Papyrus" size="12" style="1"/>
+          <text value="Progress:"/>
+        </properties>
+      </component>
+      <component id="3a796" class="javax.swing.JLabel" binding="time">
+        <constraints>
+          <grid row="0" column="4" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
         </constraints>
         <properties>
           <text value=""/>

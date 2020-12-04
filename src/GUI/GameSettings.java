@@ -32,7 +32,7 @@ public class GameSettings {
         frame.pack();
         frame.setVisible(true);
 
-
+        //a5RadioButton = new JRadioButton();
         startButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {

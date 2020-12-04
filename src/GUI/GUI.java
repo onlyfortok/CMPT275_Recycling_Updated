@@ -1,9 +1,6 @@
 package GUI;
 
-import Game.GAME_GUI;
-import Game.HowToPlayScreen;
-import Game.MainGameScreen;
-import Game.StartingGameScreen;
+import Game.*;
 
 import javax.swing.*;
 import java.awt.*;
@@ -137,6 +134,7 @@ public class GUI implements MainGameScreen{
     public static void main(String[] args) {
         GUI g = new GUI();
         g.run();
+        SoundClass sound = new SoundClass();
     }
 }
 

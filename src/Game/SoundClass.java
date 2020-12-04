@@ -1,19 +1,32 @@
 package Game;
 
-import java.io.*;
 import javax.sound.sampled.*;
-/**
- * Use SourceDataLine to read line-by-line from the external sound file.
- * For computer game, use Clip to pre-load short-duration sound files.
- */
+import java.io.File;
+import java.io.IOException;
+import java.nio.file.Path;
+import java.nio.file.Paths;
+
+
 public class SoundClass {
-    public static void main(String[] args) {
+    boolean playing  = false;
+
+    public void setPlaying(boolean playing) {
+        this.playing = playing;
+    }
+    public boolean getPlaying(){
+        return this.playing;
+    }
+
+    public SoundClass() {
         SourceDataLine soundLine = null;
-        int BUFFER_SIZE = 64*1024;  // 64 KB
+        int BUFFER_SIZE = 64 * 1024;  // 64 KB
 
         // Set up an audio input stream piped from the sound file.
         try {
-            File soundFile = new File("C:\\Users\\eseai\\IdeaProjects\\CMPT275_Recycling_Updated3\\src\\Sound\\music_dave_miles_get_the_groove.wav");
+            Path path = Paths.get("src\\Sound\\music_dave_miles_get_the_groove.wav");
+            String location = String.valueOf(path.toAbsolutePath()); //holds the image path
+            File soundFile = new File(location);
+
             AudioInputStream audioInputStream = AudioSystem.getAudioInputStream(soundFile);
             AudioFormat audioFormat = audioInputStream.getFormat();
             DataLine.Info info = new DataLine.Info(SourceDataLine.class, audioFormat);
@@ -41,4 +54,5 @@ public class SoundClass {
 
         }
     }
+
 }

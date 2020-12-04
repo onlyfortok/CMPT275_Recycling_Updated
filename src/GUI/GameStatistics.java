@@ -41,10 +41,10 @@ public class GameStatistics extends JFrame {
         String st;
         while((st= br.readLine())!=null){
             String[] num = st.split("-");
-            int a,b,c;
-            a=Integer.parseInt(num[0]);
-            b= Integer.parseInt(num[1]);
-            c= Integer.parseInt(num[2]);
+            double a,b,c;
+            a= Double.parseDouble(num[0]);
+            b= Double.parseDouble(num[1]);
+            c= Double.parseDouble(num[2]);
             last_score.setText(String.valueOf(a));
             highest_score.setText(String.valueOf(b));
             lowest_score.setText(String.valueOf(c));

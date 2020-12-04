@@ -110,7 +110,10 @@
             </constraints>
             <properties>
               <background color="-473999"/>
+              <enabled value="true"/>
               <font name="Papyrus" size="12" style="1"/>
+              <hideActionText value="false"/>
+              <selected value="true"/>
               <text value="5          "/>
             </properties>
           </component>
@@ -141,6 +144,7 @@
             <properties>
               <background color="-473999"/>
               <font name="Papyrus" size="12" style="1"/>
+              <selected value="true"/>
               <text value="Easy  "/>
             </properties>
           </component>
@@ -171,6 +175,7 @@
             <properties>
               <background color="-473999"/>
               <font name="Papyrus" size="12" style="1"/>
+              <selected value="true"/>
               <text value="Words"/>
             </properties>
           </component>
@@ -216,6 +221,7 @@
             <properties>
               <background color="-473999"/>
               <font name="Papyrus" size="12" style="1"/>
+              <selected value="true"/>
               <text value="ON  "/>
             </properties>
           </component>

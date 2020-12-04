@@ -10,7 +10,9 @@ public class Data implements Database{
      "Cup Noodles", "Chocolate Wrappers", "Milk Jug", "Watermelon","Milk Carton", "Soda Bottles", "Plastic Bags", "Plastic Rings", "Styrofoam", "Glass Jar"};
     protected String [] hardItems = {"Coffee Cup Lid", "Broken Mirror", "Latex Balloons", "Medicine Bottle", "Chewed Gum","Baby Wipes", "Gift Wrap","Toilet Cleaner",
              "Wine Box", "Packaging Peanuts","Envelopes", "Face Mask", "Paint Brushes", "Magazines", "Cookies", "Candy Wrappers", "Aluminium Foil", "Game Controller"};
+
     protected ArrayList nums;
+
     protected String [] easyAnswers = {"Trash", "Mixed Paper", "Mixed Paper", "Organic", "Mixed Paper", "Bottles/Cans", "Trash", "Bottles/Cans",
     "Organic", "Organic", "Mixed Paper", "Mixed Paper", "Trash", "Mixed Paper", "E-waste", "Mixed Paper", "Bottles/Cans", "Plastics"};
     protected String [] mediumAnswers = {"Plastics", "Mixed Paper", "Trash", "Bottles/Cans", "Plastics", "Organic", "Trash", "Organic",

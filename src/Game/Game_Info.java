@@ -89,7 +89,7 @@ public class Game_Info extends Data implements Game_parameters {
                 temp_score +=1;
             }
             }
-        return (temp_score/this.max_number_items);
+        return (temp_score/this.max_number_items) *100;
     }
     public String get_answer(int i){ //i has to be between 0 and 5
         return this.answers[i];
