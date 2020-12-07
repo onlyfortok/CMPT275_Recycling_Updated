@@ -12,8 +12,10 @@ import java.awt.event.ActionListener;
 import java.io.*;
 import java.nio.file.Path;
 import java.nio.file.Paths;
-import java.util.concurrent.TimeUnit;
+
+
 public class PlayGui implements GamePlayScreen {
+
     private JFrame frame = new JFrame("RecycleMania");
     private boolean save_game = false;
     private boolean play_again = false;
@@ -30,9 +32,11 @@ public class PlayGui implements GamePlayScreen {
     private JLabel errorLabel;
     private JLabel TimerLabel;
     private JLabel time;
-    private  JPanel panel=new JPanel(); //This panel will hold all the containers
-    private  JPanel panel2=new JPanel(); //This panel will hold all the radio buttons
+
+    private JPanel panel=new JPanel(); //This panel will hold all the containers
+    private JPanel panel2=new JPanel(); //This panel will hold all the radio buttons
     private JLabel Word_Image= new JLabel("");
+
     private static JRadioButton b1 = new JRadioButton("Bottles or Cans");
     private static JRadioButton b2 = new JRadioButton("E-Waste");
     private static JRadioButton b3 = new JRadioButton("Mixed Paper");
@@ -40,36 +44,46 @@ public class PlayGui implements GamePlayScreen {
     private static JRadioButton b5 = new JRadioButton("Plastics");
     private static JRadioButton b6 = new JRadioButton("Trash");
     private static ButtonGroup bg = new ButtonGroup();
+
     private Game_Info G1 = new Game_Info();
     private String word;
     private boolean isTimeOn = false;
     private JLabel image_temp = new JLabel(); // image temp
     private String percentProgress;
-    Font font = new Font("Papyrus", Font.BOLD,12);
-    int elapsedTime = 0;
-    int seconds =0;
-    int minutes =0;
-    int hours =0;
-    boolean started = false;
-    String seconds_string = String.format("%02d", seconds);
-    String minutes_string = String.format("%02d", minutes);
-    String hours_string = String.format("%02d", hours);
+    private Font font = new Font("Papyrus", Font.BOLD,12);
+
+    //Time member variables
+    private int elapsedTime = 0;
+    private int seconds =0;
+    private int minutes =0;
+    private int hours =0;
+    private String seconds_string = String.format("%02d", seconds);
+    private String minutes_string = String.format("%02d", minutes);
+    private String hours_string = String.format("%02d", hours);
+
     public PlayGui() throws IOException {
         setting_containers(); //Setting the containers in the Gui
         setting_Radio_buttons();//Setting the radio buttons in the Gui
+
+        b6.setSelected(true);
+
+        //Exit button to exit the game during the game play
         exitButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                ImageIcon icon = new ImageIcon("cancel-32.jpg");
+                ImageIcon icon = new ImageIcon("cancel-32.jpg");  // An icon for the JOptionPane
+                // A JOptionPane should pop up warning the user of their action
                 int check = JOptionPane.showConfirmDialog(frame, "Are you sure you want to exit the current game", "Exit",
                         JOptionPane.OK_CANCEL_OPTION, JOptionPane.INFORMATION_MESSAGE, icon);
-                if(check == JOptionPane.OK_OPTION){
+                if(check == JOptionPane.OK_OPTION){ // if the user decides to exit the game, the application should return to the main screen
                     frame.dispose();
                     GUI g = new GUI();
                     g.run();
                 }
             }
         });
+
+
         //prev button
         prevButton.addActionListener(new ActionListener() {
             @Override
@@ -84,6 +98,8 @@ public class PlayGui implements GamePlayScreen {
                 //counter is dealt with but not the score yet
             }
         });
+
+
         //this button is good
         nextButton.addActionListener(new ActionListener() {
             @Override
@@ -102,15 +118,11 @@ public class PlayGui implements GamePlayScreen {
                 if(G1.get_Item_type().equals("Images")){ // this might need testing
                     display_image_from_database();
                 }
-//                if(G1.get_Game_is_done() == true){
-//
-//                    nextButton.setText("Back to Main GUI");
-//                    frame.dispose();
-//                    GUI g = new GUI();
-//                    g.run();
-//                }
+
             }
         });
+
+
         RecycleBin_1.add(panel,BorderLayout.CENTER);
         RecycleBin_1.add(panel2,BorderLayout.SOUTH);
         frame.add(main_panel);
@@ -129,6 +141,8 @@ public class PlayGui implements GamePlayScreen {
             bkg = new Color(r,g,b);
         }
         br.close();
+
+
         Path pathT = Paths.get("src\\GamePlay Info\\Theme.txt");
         String locationT = String.valueOf(pathT.toAbsolutePath()); //holds the image path
         File fileT = new File(locationT);
@@ -142,6 +156,8 @@ public class PlayGui implements GamePlayScreen {
             thm = new Color(r,g,b);
         }
         br.close();
+
+
         Font wordFont = new Font("Papyrus",Font.BOLD,48);
         b1.setFont(font);
         b2.setFont(font);
@@ -179,7 +195,7 @@ public class PlayGui implements GamePlayScreen {
         //first time around
         if(G1.get_counter()== 0){
             word_or_image_panel.add(Word_Image);
-            progressLabel.setFont(font);
+            progressLabel.setFont(font);  //At the beginning of the game, show that the progress is 0
             progressLabel.setText("0.0% Done");
         }
         String Game_difficulty_chosen = G1.getGame_Chosen();
@@ -224,15 +240,19 @@ public class PlayGui implements GamePlayScreen {
             word_or_image_panel.add(image_temp);
         }
     }
+
+    //Function to update the game statistics file and Gui
     public void updateGameStats(double number) throws IOException {
-        double a = 0,b = 0,c = 0;
+        double a = 0,b = 0,c = 0; // These variables will hold the latest, best and worst scores
+
         Path path = Paths.get("src\\GamePlay Info\\Game Statistics.txt");
         String location = String.valueOf(path.toAbsolutePath()); //holds the image path
         File file = new File(location);
-        BufferedReader br = new BufferedReader(new FileReader(file));
+        BufferedReader br = new BufferedReader(new FileReader(file)); // reads in the String from the character stream
         String st;
-        while((st= br.readLine())!=null){
-            String[] num = st.split("-");
+
+        while((st= br.readLine())!=null){ //read in the line and separate all the scores by a -
+            String[] num = st.split("-"); // store them in a, b, c
             a= Double.parseDouble(num[0]);
             b= Double.parseDouble(num[1]);
             c= Double.parseDouble(num[2]);
@@ -253,6 +273,7 @@ public class PlayGui implements GamePlayScreen {
             e.printStackTrace();
         }
     }
+
     //Set Score
     public void Give_userInput_for_ScoreChecking() throws InterruptedException {
         if(b1.isSelected()){

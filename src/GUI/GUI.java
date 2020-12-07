@@ -130,10 +130,12 @@ public class GUI implements MainGameScreen{
     }
 
 
-
+    // Main function to start the game up.
     public static void main(String[] args) {
+        // Create an object of the GUI class and run it
         GUI g = new GUI();
         g.run();
+        //To play the background music, create an object of the sound class and loop it.
         for (int i = 0; i < 10; i++){
             SoundClass sound = new SoundClass();
         }

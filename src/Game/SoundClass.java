@@ -8,14 +8,6 @@ import java.nio.file.Paths;
 
 
 public class SoundClass {
-    boolean playing  = false;
-
-    public void setPlaying(boolean playing) {
-        this.playing = playing;
-    }
-    public boolean getPlaying(){
-        return this.playing;
-    }
 
     public SoundClass() {
         SourceDataLine soundLine = null;
