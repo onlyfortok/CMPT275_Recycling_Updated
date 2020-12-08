@@ -14,6 +14,7 @@ public class SoundClass {
         int BUFFER_SIZE = 64 * 1024;  // 64 KB
 
         // Set up an audio input stream piped from the sound file.
+
         try {
             Path path = Paths.get("src\\Sound\\music_dave_miles_get_the_groove.wav");
             String location = String.valueOf(path.toAbsolutePath()); //holds the image path
